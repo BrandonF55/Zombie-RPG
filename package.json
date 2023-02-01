@@ -1,21 +1,21 @@
 {
-  "name": "template",
+  "name": "zombierpg",
   "version": "1.0.0",
   "repository": {
-    "url": "git+https://github.com/{USERNAME}/{REPONAME}.git"
+    "url": "git+https://github.com/BrandonF55/Zombie-RPG"
   },
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "start": "npm run build && webpack-dev-server --open --mode=development",
+    "start": "npm run build && webpack serve --open --mode=development",
     "lint": "eslint src/*.js",
     "test": "jest --coverage",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
-  "author": "Chris Loveless",
+  "author": "Brandon Fenk",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.6",
@@ -39,3 +39,4 @@
     "bootstrap": "^4.5.3"
   }
 }
+
