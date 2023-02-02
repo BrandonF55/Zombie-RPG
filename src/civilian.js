@@ -7,8 +7,7 @@ const counterFunction = () => {
 };
 const incrementer = counterFunction();
 
-// eslint-disable-next-line no-unused-vars
-export const storeState = (name) => {
+export const civilianStoreState = (name) => {
   let currentState = { name: name, id: incrementer() };
   return (stateChangeFunction = state => state) => {
     const newState = stateChangeFunction(currentState);
@@ -19,7 +18,7 @@ export const storeState = (name) => {
 
 // const stateControl = storeState();
 
-export const changeState = (prop) => {
+const changeZombieState = (prop) => {
   return (value) => {
     return (state) => ({
       ...state,
@@ -28,8 +27,18 @@ export const changeState = (prop) => {
   };
 };
 
-export const attack = changeState("hp")(-1);
-export const critAttack = changeState("hp")(-5);
+const changeCivilianState = (prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state,
+      [prop]: (state[prop] || 25) + value
+    });
+  };
+};
 
-export const heal = changeState("hp")(1);
-export const bigHeal = changeState("hp")(5);
+
+export const civilianAttack = changeZombieState("hp")(-1);
+export const civilianCritAttack = changeZombieState("hp")(-5);
+
+export const civilianHeal = changeCivilianState("civilianHp")(1);
+export const civilianBigHeal = changeCivilianState("civilianHp")(5);
