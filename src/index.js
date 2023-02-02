@@ -43,6 +43,9 @@ const civilianBuilder = (name) => {
   let h7 = document.createElement('h5');
   h7.setAttribute('id', `civilianHP1${newCivilian().id}`);
   h7.innerText = "25";
+  let h8 = document.createElement('h5');
+  h8.setAttribute('class', 'invisible');
+  h8.innerText = "GAME OVER!!"
 
 
   // Append
@@ -53,6 +56,7 @@ const civilianBuilder = (name) => {
   document.getElementById('showRole').append(b4);
   document.getElementById('showRole').append(h6);
   document.getElementById('showRole').append(h7);
+  document.getElementById('showRole').append(h8);
 
   
   // Actions 
